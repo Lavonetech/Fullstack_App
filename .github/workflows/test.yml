@@ -19,8 +19,9 @@ jobs:
         with:
           node-version: ${{matrix.node-version}}
 
-      - name: Install dependencies and build
+      - name: Set CI to false and Install dependencies and build
         run: |
+          export CI=false
           cd server
           npm install
           cd ../
