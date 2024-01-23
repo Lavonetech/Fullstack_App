@@ -28,3 +28,7 @@ jobs:
           cd client
           npm install
           npm run build
+        -name: Copy files to /var/www/html
+          run:
+            sudo cp -r build/* /var/www/html/
+          
