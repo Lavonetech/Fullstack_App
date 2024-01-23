@@ -1,0 +1,30 @@
+name:test
+
+on:
+ push:
+   branches:[main]
+ pull_request:
+   branches:[main]
+   
+jobs:
+  build:
+    runs-on:self-hosted
+
+steps:
+  - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{matrix.node-version}}
+
+    -run:
+      cd server
+      npm i
+      cd../
+      cd client
+      npm i
+      npm run build
+      
+   
