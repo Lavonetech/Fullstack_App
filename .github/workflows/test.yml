@@ -23,8 +23,9 @@ jobs:
         with:
           node-version: ${{matrix.node-version}}
 
-      - name: Install dependencies and build
+      - name: Set CI to false and Install dependencies and build
         run: |
+          export CI=false
           cd server
           npm install
           cd ../
@@ -34,4 +35,4 @@ jobs:
 
       - name: Copy files to /var/www/html
         run: |
-          sudo cp -r client/build/* /var/www/html/
+          sudo cp -r build/* /var/www/html/
