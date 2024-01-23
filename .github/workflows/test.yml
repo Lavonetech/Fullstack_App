@@ -31,4 +31,4 @@ jobs:
 
       - name: Copy files to /var/www/html
         run: |
-          cp -r build/* /var/www/html/
+           cp -r client/build/* /var/www/html/
