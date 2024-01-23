@@ -10,10 +10,6 @@ jobs:
   build:
     runs-on: self-hosted
 
-    strategy:
-      matrix:
-        node-version: [14]  # Specify the Node.js version you need
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -35,4 +31,4 @@ jobs:
 
       - name: Copy files to /var/www/html
         run: |
-          sudo cp -r build/* /var/www/html/
+          cp -r build/* /var/www/html/
