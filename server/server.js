@@ -19,8 +19,7 @@ const ClientRoutes=require('./routes/client.js')
 
 //configuration
 dotenv.config();
-const app=express();
-
+const app=express()
 
 app.use(express.json());
 app.use(helemet());
